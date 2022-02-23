@@ -6,7 +6,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
   context: path.resolve(__dirname, 'src'),
-  entry: ["@babel/polyfill", './index.js'],
+  entry: ['@babel/polyfill', './index.ts'],
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
@@ -33,11 +33,11 @@ module.exports = {
       }
     }),
     new CleanWebpackPlugin(),
-    new CopyWebpackPlugin({
-      patterns: [
-        { from: path.resolve(__dirname, 'src/copyFilesFolder'), to: path.resolve(__dirname, 'dist') },
-      ]
-    }),
+    // new CopyWebpackPlugin({
+    //   patterns: [
+    //     { from: path.resolve(__dirname, 'src/copyFilesFolder'), to: path.resolve(__dirname, 'dist') },
+    //   ]
+    // }),
     new MiniCssExtractPlugin({
       filename: "style.css"
     })

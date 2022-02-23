@@ -1,0 +1,59 @@
+body {
+  margin: 0;
+}
+
+*, 
+*::before,
+*::after{
+    box-sizing: border-box;
+}
+
+
+h1,h2,h3,h4,h5,h6{
+  margin: 0;
+}
+
+
+ul,
+p{
+margin: 0;
+padding: 0;
+
+}
+
+li{
+list-style: none;
+
+}
+
+a{
+text-decoration: none;
+line-height: 0;
+color: #000000;
+}
+
+
+img {
+  border-style: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  line-height: 0;
+}
+
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit; /* 1 */
+  font-size: 100%; /* 1 */
+  line-height: 0; /* 1 */
+  margin: 0; /* 2 */
+  padding: 0;
+}
+
