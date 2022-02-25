@@ -2,68 +2,155 @@
 @import url('./fonts.scss')
 
 $color-black: #000000
+$padding-section: 30px
+$background-grey: #797878
 
-  
+// extend
+%border-info-section
+  content: ""
+  display: block
+  position: absolute
+  bottom: 0
+  left: 5%
+  right: 0
+  width: 95%
+  height: 2px
+  background: #fff
+  border-radius: 5px
+
 body
-  background: rgb(121, 120, 120)
+  background: $background-grey
   font-family: "Montserrat", sans-serif
   font-size: 22px
   line-height: 1.1
   color: $color-black
-  
-.container 
+
+.container
   width: 100%
   max-width: 1260px
   margin: 0 auto
   background: #fff
   padding: 0 10px
+  padding-top: 30px
 
 // visually-hidden(класс для прятание элементов)
-.visually-hidden 
-    position: absolute
-    clip: rect(0 0 0 0)
-    width: 1px
-    height: 1px
-    margin: -1px
+.visually-hidden
+  position: absolute
+  clip: rect(0 0 0 0)
+  width: 1px
+  height: 1px
+  margin: -1px
 
- 
 //  Header
 .header
   width: 100%
-  max-width: 100% 
-  padding: 30px 30px 0 30px 
+  max-width: 100%
+  padding: 30px $padding-section 0 $padding-section
   display: flex
   align-items: flex-start
- 
-.header__photo 
-  width: 35%
-  height: auto
-  object-fit: cover
-  border-radius: 5px
 
-.person 
+.header__photo
+  width: 35%
+  height: 100%
+  object-fit: cover
+
+.person
   width: 65%
   height: auto
   margin-left: 15px
-     
-  &__name 
+
+  &__name
     font-family: "Open-Sans", sans-serif
     font-size: 54px
     margin-bottom: 5px
-   
-  &__info 
+
+  &__info
     font-family: "Open-Sans light", sans-serif
     opacity: .5
     font-size: 18px
-    margin-bottom: 35px
+    margin-bottom: 20px
 
-  &__text 
-   
+  &__text
     line-height: 1.4
 
+// section content
+.content
+  padding: 0px $padding-section 0 $padding-section
 
-    
-  
+.info
+  width: 35%
+  padding-top: 30px
+  background: $background-grey
+  color: #fff
 
+.contacts
+  position: relative
+  font-size: 22px
+  line-height: 1.4
+  padding-bottom: 40px
 
+  &::before
+    @extend %border-info-section
 
+  &__items
+    color: #fff
+    .contacts__item
+      position: relative
+      padding-left: 65px
+      margin-bottom: 10px
+      &::before
+        content: ""
+        display: block
+        position: absolute
+        left: 5%
+        top: 50%
+        transform: translateY(-50%)
+        background-size: 30px 30px
+        background-position: center center
+        background-repeat: no-repeat
+        width: 30px
+        height: 30px
+
+      &.telegram::before
+        background-image: url('../assets/svg/contacts/telegram.svg')
+      &.vk::before
+        background-image: url('../assets/svg/contacts/vk.svg')
+      &.email::before
+        background-image: url('../assets/svg/contacts/email.svg')
+      &.maps::before
+        background-image: url('../assets/svg/contacts/marker.svg')
+      &.github::before
+        background-image: url('../assets/svg/contacts/github.svg')
+
+      a
+        position: relative
+        color: #fff
+        transition: .4s
+      a:hover
+        color: $color-black
+      a:active
+        color: #fff
+
+.education
+  position: relative
+  padding-top: 30px
+  padding-bottom: 30px
+  &::before
+    @extend %border-info-section
+
+  &__title
+    padding-bottom: 30px
+    text-transform: uppercase
+    padding-left: 5%
+    margin-bottom: 15px
+  &__inner
+    padding-left: 5%
+    margin-bottom: 30px
+  &__name
+    text-transform: uppercase
+    padding-bottom: 10px
+  &__text
+    font-size: 18px
+
+.works
+  width: 65%
