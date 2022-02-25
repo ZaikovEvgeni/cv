@@ -1,4 +1,4 @@
-import './styles/styl.scss';
+import './styles/styl.sass';
 
 const ar = 2;
 

@@ -33,11 +33,11 @@ module.exports = {
       }
     }),
     new CleanWebpackPlugin(),
-    // new CopyWebpackPlugin({
-    //   patterns: [
-    //     { from: path.resolve(__dirname, 'src/copyFilesFolder'), to: path.resolve(__dirname, 'dist') },
-    //   ]
-    // }),
+    new CopyWebpackPlugin({
+      patterns: [
+        { from: path.resolve(__dirname, 'src/assets/images'), to: path.resolve(__dirname, 'dist/assets/images') },
+      ]
+    }),
     new MiniCssExtractPlugin({
       filename: "style.css"
     })
@@ -64,6 +64,7 @@ module.exports = {
         test: /\.(ttf|woff|woff2|eot)/,
         // use: ['file-loader']
         type: 'asset/resource'
+
       },
       {
         test: /\.js$/,
