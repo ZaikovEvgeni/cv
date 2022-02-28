@@ -18,6 +18,14 @@ $background-grey: #797878
   background: #fff
   border-radius: 5px
 
+  // content-title 
+.content-title
+    font-family: "Roboto", sans-serif
+    text-transform: uppercase
+    text-align: center
+    font-size: 48px
+    margin-bottom: 40px
+
 body
   background: $background-grey
   font-family: "Montserrat", sans-serif
@@ -188,13 +196,7 @@ body
 
 .works
   width: 65%
-
-  .content-title
-    font-family: "Roboto", sans-serif
-    text-transform: uppercase
-    text-align: center
-    font-size: 48px
-    margin-bottom: 40px
+  padding-top: 30px
 
 .portfolio
   width: 100%
@@ -243,3 +245,151 @@ body
         height: 100%
         object-fit: cover
         transition: opacity .1s linear
+
+
+.code
+  padding: 30px 30px
+  &__inner
+    padding: 20px
+    border-radius: 5px
+    border: 1px solid #000
+    
+
+.footer
+  width: 100%
+  display: flex
+  justify-content: space-between
+  align-items: center
+  padding: 30px 30px
+  background: #2e2d2d
+  color: #fff
+  font-size: 22px
+  &__logo
+    background: url('../assets/images/footer/logo_rsscholl.svg') no-repeat center center
+    background-size: 100% 100%
+    width: 100px
+    height: 30px
+
+
+
+
+
+
+
+  // adaptive 
+@media screen and ( max-width: 1184px  )
+  .skills .skills__text::after 
+    left: 180px
+    top:20%
+
+@media screen and ( max-width: 1000px )
+  body 
+    font-size: 18px
+  .person__text
+    line-height: 1.1
+  .header, .content, .code
+    padding-left: 0
+    padding-right: 0     
+
+  .skills .skills__text::after 
+    left: 148px
+    top:20%      
+  
+  .skills
+  
+    .skills__text.html_width::after
+        width: 100px
+    .skills__text.css_width::after
+        width: 90px
+    .skills__text.sass_width::after
+        width: 90px
+    .skills__text.js_width::after
+        width: 80px
+    .skills__text.webpack_width::after
+        width: 80px
+    .skills__text.english_width::after
+        width: 60px    
+
+
+@media screen and ( max-width: 770px )
+  .container
+    padding-top: 10px 
+
+  .content-title
+    font-size: 44px
+    margin-bottom: 21px  
+
+  .header
+    padding-top: 0
+    flex-direction: column
+    align-items: center
+
+  .person
+    text-align: center
+    width: 100%  
+    
+  .content 
+    padding-top: 30px
+  .info
+    width: 44%
+
+  .contacts
+    font-size: 19px  
+  .works 
+    width: 56%
+    padding-top: 0  
+
+  .portfolio
+    justify-content: center
+    .portfolio__item
+      width: 100%
+
+  .code__inner
+    padding: 0px
+    font-size: 15px
+    ol
+      padding-left: 15px
+
+  @media screen and ( max-width: 620px )
+    body
+      font-size: 15px
+
+    .header__photo 
+      width: 60%
+    .portfolio
+      row-gap: 10px  
+    .code__inner
+      font-size: 12px
+
+    .content
+      flex-direction: column
+      align-items: center
+    .info 
+      width: 80%
+    .works
+      padding-top: 15px
+      width: 80%
+    .portfolio
+      padding-left: 0    
+
+    .footer
+      font-size: 15px  
+
+  @media screen and ( max-width: 462px )
+    .person__name
+      font-size: 35px
+    .info 
+      width: 100%
+    .works
+      padding-top: 15px
+      width: 100%
+
+    .code__inner
+      font-size: 9px
+    .footer
+      padding: 10px
+    .content-title
+      font-size: 35px
+      margin-bottom: 9px    
+
+        
