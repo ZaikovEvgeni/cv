@@ -131,18 +131,19 @@ body
       a:active
         color: #fff
 
+.info__titlies
+  padding-top: 30px
+  padding-bottom: 30px
+  text-transform: uppercase
+  padding-left: 5%
+  margin-bottom: 15px
+
 .education
   position: relative
-  padding-top: 30px
   padding-bottom: 30px
   &::before
     @extend %border-info-section
 
-  &__title
-    padding-bottom: 30px
-    text-transform: uppercase
-    padding-left: 5%
-    margin-bottom: 15px
   &__inner
     padding-left: 5%
     margin-bottom: 30px
@@ -151,6 +152,40 @@ body
     padding-bottom: 10px
   &__text
     font-size: 18px
+
+
+.skills
+  padding-bottom: 30px
+  .skills__text
+    position: relative
+    text-transform: uppercase
+    padding-left: 5%
+    line-height: 1.1
+    margin-bottom: 15px
+    &::after
+      display: block
+      content: ""
+      position: absolute
+      left: 250px
+      top: 50%
+      transform: rotateX(-50%)
+      height: 5px
+      background-color: #fff
+      border-radius: 5px
+
+    &.html_width::after
+      width: 130px
+    &.css_width::after
+      width: 120px
+    &.sass_width::after
+      width: 120px
+    &.js_width::after
+      width: 110px
+    &.webpack_width::after
+      width: 110px       
+    &.english_width::after
+      width: 70px       
+
 
 .works
   width: 65%
